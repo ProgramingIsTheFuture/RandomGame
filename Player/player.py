@@ -29,27 +29,25 @@ class Player(object):
             if pressed_keys[pygame.K_w] or pressed_keys[pygame.K_UP]:
                 self.y -= self.speed
                 self.last_direction = 0
-                self.Fire.set_y(self.y)
 
         if self.y + self.height < h:
             if pressed_keys[pygame.K_s] or pressed_keys[pygame.K_DOWN]:
                 self.y += self.speed
                 self.last_direction = 1
-                self.Fire.set_y(self.y)
 
         if self.x > 0:
             if pressed_keys[pygame.K_a] or pressed_keys[pygame.K_LEFT]:
                 self.x -= self.speed
                 self.last_direction = 2
-                self.Fire.set_x(self.x)
 
         if self.x + self.width < w:
             if pressed_keys[pygame.K_d] or pressed_keys[pygame.K_RIGHT]:
                 self.x += self.speed
                 self.last_direction = 3
-                self.Fire.set_x(self.x)
 
         if pressed_keys[pygame.K_SPACE]:
+            self.Fire.set_y(self.y)
+            self.Fire.set_x(self.x)
             self.Fire.on_shot(self.last_direction)
 
     def collision(self, x, y, width, height):

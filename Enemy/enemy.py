@@ -65,7 +65,7 @@ class Enemy(object):
                 self.spawn_position = 2
 
     def collision_bullet(self, bullet_x, bullet_y, bullet_width, bullet_height):
-        if (self.x >= bullet_x >= self.x + self.width or self.x >= bullet_x + bullet_width >= self.x + self.width) and (self.y >= bullet_y >= self.y + self.height or self.y >= bullet_y + bullet_height >= self.y + self.height):
+        if (self.x <= bullet_x <= self.x + self.width or self.x <= bullet_x + bullet_width <= self.x + self.width) and (self.y <= bullet_y <= self.y + self.height or self.y <= bullet_y + bullet_height <= self.y + self.height):
             return True
         return False
 

@@ -45,18 +45,22 @@ class Fire(object):
 
             if shoot[0] == 0:
                 shoot[2] -= self.shoot_speed
+                self.set_y(shoot[2])
                 self.draw_individual_shot(shoot[1], shoot[2])
 
             if shoot[0] == 1:
                 shoot[2] += self.shoot_speed
+                self.set_y(shoot[2])
                 self.draw_individual_shot(shoot[1], shoot[2])
 
             if shoot[0] == 2:
                 shoot[1] -= self.shoot_speed
+                self.set_x(shoot[1])
                 self.draw_individual_shot(shoot[1], shoot[2])
 
             if shoot[0] == 3:
                 shoot[1] += self.shoot_speed
+                self.set_x(shoot[1])
                 self.draw_individual_shot(shoot[1], shoot[2])
 
     def draw_individual_shot(self, shoot_1, shoot_2):

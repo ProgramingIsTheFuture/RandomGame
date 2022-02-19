@@ -39,9 +39,7 @@ class App(object):
                     self.running = False
 
                 self.enemy_dead = i.collision_bullet(self.Fire.get_x(), self.Fire.get_y(), self.Fire.get_width(), self.Fire.get_height())
-                print(self.Fire.get_x(), self.Fire.get_y(), self.Fire.get_width(), self.Fire.get_height())
                 if self.enemy_dead:
-                    print("died")
                     self.Enemy.pop(index)
                     self.enemy_dead = False
 
